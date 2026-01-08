@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/sections/Hero.astro';
+import ProblemaSolucion from '../components/sections/ProblemaSolucion.astro';
+import Diferenciadores from '../components/sections/Diferenciadores.astro';
+import Footer from '../components/sections/Footer.astro';
+---
+
+<Layout title="Inicio - Audelabs | Consultoría Digital Integral">
+  <Navigation />
+  <Hero />
+  <ProblemaSolucion />
+  <Diferenciadores />
+  
+  <!-- CTA Section -->
+  <section class="py-16 md:py-24 lg:py-32 bg-gradient-to-r from-primary to-accent">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center text-white">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-6">
+          ¿Listo para transformar tu presencia digital?
+        </h2>
+        <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          Descubre cómo nuestros servicios pueden ayudarte a alcanzar tus objetivos comerciales.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/servicios"
+            class="inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 text-base font-semibold text-primary shadow-lg transition-all duration-200 hover:bg-gray-50 hover:shadow-xl"
+          >
+            Ver nuestros servicios
+          </a>
+          <a
+            href="/contacto"
+            class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-base font-semibold text-white transition-all duration-200 hover:bg-white/10"
+          >
+            Solicitar diagnóstico gratuito
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>

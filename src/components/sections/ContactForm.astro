@@ -1,0 +1,147 @@
+---
+---
+
+<section id="contacto" class="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-primary to-accent">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl">
+      <div class="text-center mb-12 text-white">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4">
+          ¿Listo para transformar tu presencia digital?
+        </h2>
+        <p class="text-lg md:text-xl text-white/90">
+          Solicita un diagnóstico gratuito y descubre cómo podemos ayudarte 
+          a alcanzar tus objetivos comerciales.
+        </p>
+      </div>
+
+      <div 
+        x-data="{ 
+          formData: { nombre: '', email: '', telefono: '', empresa: '', mensaje: '' },
+          isSubmitting: false,
+          isSubmitted: false,
+          async submitForm() {
+            this.isSubmitting = true;
+            // Simulación de envío - aquí integrarías con tu backend/API
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            this.isSubmitting = false;
+            this.isSubmitted = true;
+            setTimeout(() => {
+              this.isSubmitted = false;
+              this.formData = { nombre: '', email: '', telefono: '', empresa: '', mensaje: '' };
+            }, 3000);
+          }
+        }"
+        class="rounded-2xl bg-white p-8 md:p-12 shadow-2xl"
+      >
+        <div x-show="isSubmitted" x-transition class="text-center py-12">
+          <svg class="h-16 w-16 text-green-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">
+            ¡Gracias por contactarnos!
+          </h3>
+          <p class="text-gray-600">
+            Nos pondremos en contacto contigo pronto.
+          </p>
+        </div>
+
+        <form 
+          x-show="!isSubmitted"
+          @submit.prevent="submitForm()"
+          class="space-y-6"
+        >
+          <div class="grid gap-6 md:grid-cols-2">
+            <div>
+              <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">
+                Nombre completo *
+              </label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                required
+                x-model="formData.nombre"
+                class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Tu nombre"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                Email *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                x-model="formData.email"
+                class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="tu@email.com"
+              />
+            </div>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2">
+            <div>
+              <label for="telefono" class="block text-sm font-medium text-gray-700 mb-2">
+                Teléfono
+              </label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                x-model="formData.telefono"
+                class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="+52 55 1234 5678"
+              />
+            </div>
+            <div>
+              <label for="empresa" class="block text-sm font-medium text-gray-700 mb-2">
+                Empresa
+              </label>
+              <input
+                type="text"
+                id="empresa"
+                name="empresa"
+                x-model="formData.empresa"
+                class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Nombre de tu empresa"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-2">
+              ¿Cómo podemos ayudarte? *
+            </label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              required
+              rows="5"
+              x-model="formData.mensaje"
+              class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Cuéntanos sobre tu proyecto o desafío..."
+            ></textarea>
+          </div>
+
+          <div class="flex justify-center">
+            <button
+              type="submit"
+              :disabled="isSubmitting"
+              class="btn-primary px-8 py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <span x-show="isSubmitting" class="mr-2">⏳</span>
+              <span x-show="!isSubmitting">📧</span>
+              <span class="ml-2" x-text="isSubmitting ? 'Enviando...' : 'Solicitar diagnóstico gratuito'"></span>
+            </button>
+          </div>
+
+          <p class="text-center text-sm text-gray-500">
+            Al enviar este formulario, aceptas que nos pongamos en contacto contigo.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

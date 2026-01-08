@@ -1,0 +1,236 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/sections/Footer.astro';
+import Diferenciadores from '../components/sections/Diferenciadores.astro';
+
+const valores = [
+  {
+    icon: '🎯',
+    title: 'Enfoque en Resultados',
+    description: 'Cada proyecto está diseñado para generar impacto medible en tu negocio. No trabajamos por trabajar; trabajamos para generar resultados.',
+  },
+  {
+    icon: '👥',
+    title: 'Colaboración',
+    description: 'Creemos en trabajar contigo, no para ti. Tu visión y nuestro expertise se combinan para crear soluciones únicas.',
+  },
+  {
+    icon: '⭐',
+    title: 'Excelencia',
+    description: 'Nos comprometemos con la más alta calidad en cada proyecto. No aceptamos atajos ni soluciones mediocres.',
+  },
+];
+
+const misionVision = {
+  mision: 'Ayudar a empresas y profesionistas a transformar su presencia digital mediante soluciones integrales que combinan estrategia, marketing y tecnología, generando resultados medibles y sostenibles.',
+  vision: 'Ser el partner estratégico digital de referencia en Latinoamérica, reconocido por nuestro enfoque integral, resultados comprobados y compromiso genuino con el éxito de nuestros clientes.',
+};
+---
+
+<Layout title="Sobre Nosotros - Audelabs | Conoce Nuestro Equipo y Visión">
+  <Navigation />
+  
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-primary/5 via-white to-accent/5 pt-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl mb-6">
+          Sobre <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Audelabs</span>
+        </h1>
+        <p class="text-lg leading-8 text-gray-600 sm:text-xl md:text-2xl max-w-3xl mx-auto">
+          Somos más que una agencia. Somos tu partner estratégico digital, 
+          comprometido con tu éxito a largo plazo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nuestro Equipo -->
+  <section class="py-16 md:py-24 lg:py-32 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl mb-4">
+            Nuestro Equipo
+          </h2>
+          <p class="text-lg text-gray-600">
+            Conoce la visión y experiencia detrás de Audelabs
+          </p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2">
+          <!-- Alex Escalante -->
+          <div class="rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 p-8 md:p-10 border border-gray-200">
+            <div class="flex flex-col items-center text-center mb-6">
+              <div class="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-6">
+                <span class="text-4xl font-bold text-white">AE</span>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                Alex Escalante
+              </h3>
+            </div>
+            <div class="space-y-4">
+              <p class="text-gray-700 leading-relaxed">
+                Fundador de Audelabs, con una visión clara: ayudar a empresas y 
+                profesionistas a alcanzar sus objetivos mediante soluciones digitales 
+                integrales que realmente funcionan.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                Con experiencia en consultoría estratégica, marketing digital y desarrollo 
+                tecnológico, Alex ha trabajado con diversas empresas para transformar su 
+                presencia digital y generar resultados medibles. Su enfoque combina pensamiento 
+                estratégico con ejecución técnica de alto nivel.
+              </p>
+            </div>
+          </div>
+
+          <!-- Roberto Andrade Fonseca -->
+          <div class="rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 p-8 md:p-10 border border-gray-200">
+            <div class="flex flex-col items-center text-center mb-6">
+              <div class="w-32 h-32 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center mb-6">
+                <span class="text-4xl font-bold text-white">RA</span>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                Roberto Andrade Fonseca
+              </h3>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2 text-sm uppercase tracking-wide">
+                  Background Técnico y de Negocio
+                </h4>
+                <p class="text-sm text-gray-600 mb-2">2016 - 2025</p>
+                <p class="text-gray-700 leading-relaxed text-sm">
+                  Profesor de las asignaturas de Comercialización y Sistemas de Información Gerencial 
+                  en la Maestría en Alta Dirección en la UNAM. Mi experiencia como administrador de 
+                  bases de dato relacionales y de analista de datos me ha permitido entender la importancia 
+                  de la calidad de los datos y el manejo eficiente de la estrategia de la información.
+                </p>
+              </div>
+              
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2 text-sm uppercase tracking-wide">
+                  El Pivote a la IA Generativa
+                </h4>
+                <p class="text-sm text-gray-600 mb-2">2022 - 2024</p>
+                <p class="text-gray-700 leading-relaxed text-sm">
+                  Con la llegada de los primeros LLMs, vi el potencial disruptivo. No me quedé en la 
+                  superficie; profundicé en la ingeniería de prompts, que prefiero llamar diseño profesional 
+                  de peticiones, y el fine-tuning, entendiendo cómo hablar con los modelos para obtener 
+                  resultados consistentes, no aleatorios.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-2 text-sm uppercase tracking-wide">
+                  Consultoría y Enseñar a Pensar
+                </h4>
+                <p class="text-sm text-gray-600 mb-2">Actualidad</p>
+                <p class="text-gray-700 leading-relaxed text-sm">
+                  Hoy, además de atender a empresas apoyo a estudiantes y profesores de universidades a 
+                  integrar la IA. Mi enfoque es único: enseño la lógica detrás de la herramienta. Si sabes 
+                  cómo piensa la IA, puedes usar con éxito cualquier modelo actual y futuro.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Diferenciadores />
+
+  <!-- Misión y Visión -->
+  <section class="py-16 md:py-24 lg:py-32 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl">
+        <div class="grid gap-8 md:grid-cols-2">
+          <div class="rounded-xl bg-gradient-to-br from-primary/5 to-primary/10 p-8 border border-primary/20">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">
+              Nuestra Misión
+            </h2>
+            <p class="text-gray-700 leading-relaxed">
+              {misionVision.mision}
+            </p>
+          </div>
+          <div class="rounded-xl bg-gradient-to-br from-accent/5 to-accent/10 p-8 border border-accent/20">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">
+              Nuestra Visión
+            </h2>
+            <p class="text-gray-700 leading-relaxed">
+              {misionVision.vision}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valores -->
+  <section class="py-16 md:py-24 lg:py-32 bg-gray-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center mb-16">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl mb-4">
+          Nuestros Valores
+        </h2>
+        <p class="text-lg text-gray-600">
+          Los principios que guían cada proyecto y cada decisión
+        </p>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-3">
+        {valores.map((valor) => (
+          <div class="text-center p-8 rounded-xl bg-white shadow-md border border-gray-200">
+            <div class="flex justify-center mb-6">
+              <div class="flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 text-primary text-3xl">
+                {valor.icon}
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              {valor.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              {valor.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 lg:py-32 bg-gradient-to-r from-primary to-accent">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center text-white">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-6">
+          ¿Quieres trabajar con nosotros?
+        </h2>
+        <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          Estamos listos para ayudarte a alcanzar tus objetivos digitales. 
+          Hablemos de tu proyecto.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contacto"
+            class="inline-flex items-center justify-center rounded-lg bg-white px-8 py-4 text-base font-semibold text-primary shadow-lg transition-all duration-200 hover:bg-gray-50 hover:shadow-xl"
+          >
+            Contactar ahora
+            <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a
+            href="/servicios"
+            class="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-base font-semibold text-white transition-all duration-200 hover:bg-white/10"
+          >
+            Ver servicios
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

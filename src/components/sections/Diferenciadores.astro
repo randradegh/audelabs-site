@@ -1,0 +1,56 @@
+---
+const diferenciadores = [
+  {
+    icon: '⚡',
+    title: 'Enfoque Integral',
+    description: 'No vendemos servicios aislados. Integramos estrategia, marketing y tecnología para crear soluciones completas que funcionan.',
+  },
+  {
+    icon: '👥',
+    title: 'Orientado a Resultados',
+    description: 'Cada proyecto está diseñado para generar impacto medible en tu negocio. Medimos, optimizamos y mejoramos continuamente.',
+  },
+  {
+    icon: '📊',
+    title: 'Basado en Datos',
+    description: 'Todas nuestras decisiones se fundamentan en datos reales. No adivinamos; analizamos, probamos y optimizamos.',
+  },
+  {
+    icon: '🛡️',
+    title: 'Acompañamiento Continuo',
+    description: 'No te dejamos solo después del lanzamiento. Te acompañamos en el crecimiento y evolución de tu presencia digital.',
+  },
+];
+---
+
+<section class="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-primary/5 to-accent/5">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center mb-16">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
+        ¿Por qué Audelabs?
+      </h2>
+      <p class="mt-4 text-lg text-gray-600">
+        No somos solo otra agencia. Somos tu partner estratégico digital, 
+        comprometido con tu éxito a largo plazo.
+      </p>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2">
+      {diferenciadores.map((diferenciador) => (
+        <div class="rounded-xl bg-white p-8 shadow-md border border-gray-200 hover:shadow-xl transition-all">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary text-2xl">
+              {diferenciador.icon}
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">
+              {diferenciador.title}
+            </h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
+            {diferenciador.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
