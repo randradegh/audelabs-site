@@ -119,10 +119,65 @@ git merge feature/nombre-feature
 ## 🚀 Próximos pasos después de subir
 
 1. Configurar GitHub Pages (si se desea)
-2. Configurar GitHub Actions para CI/CD (ya incluido en `.github/workflows/ci.yml`)
+2. Configurar GitHub Actions para CI/CD (ver sección "Agregar Workflow de CI/CD" abajo)
 3. Agregar badges al README
 4. Configurar branch protection rules
 5. Agregar colaboradores si es necesario
+
+## 🔧 Agregar Workflow de CI/CD
+
+**Nota:** Cualquier archivo en `.github/workflows/` requiere un token con scope `workflow` o usar SSH.
+
+### Opción 1: Agregar scope `workflow` al token
+
+1. Ir a GitHub Settings > Developer settings > Personal access tokens > Tokens (classic)
+2. Editar tu token o crear uno nuevo
+3. Seleccionar el scope `workflow`
+4. Usar el token actualizado
+
+### Opción 2: Usar SSH
+
+```bash
+# Cambiar remote a SSH
+git remote set-url origin git@github.com:USERNAME/REPO_NAME.git
+
+# Luego crear la carpeta y el workflow
+mkdir -p .github/workflows
+# Crear el archivo ci.yml con el contenido del workflow
+```
+
+### Opción 3: Agregar desde GitHub UI
+
+Después del primer push, puedes crear el workflow directamente desde la interfaz de GitHub.
+
+### Ejemplo de workflow `.github/workflows/ci.yml`:
+
+```yaml
+name: CI
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm ci
+    - name: Run linter
+      run: npm run lint || true
+    - name: Build project
+      run: npm run build
+```
 
 ## ⚠️ Notas importantes
 
